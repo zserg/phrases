@@ -1,0 +1,7 @@
+Django==1.10.5
+django-environ==0.4.1
+django-registration==2.2
+django-bootstrap3
+psycopg2
+
+
