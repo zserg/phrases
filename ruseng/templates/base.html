@@ -1,0 +1,71 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static "ruseng/ruseng.css" %}" rel="stylesheet">
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+  </head>
+
+<body>
+  <div class="wrapper">
+    <div class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'home' %}">Phrase Pairs</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class=""><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+          </ul>
+          {% block nav_user %}
+            {% if user.is_authenticated %}
+              <ul class="nav navbar-nav navbar-right">
+                <li id="nav-username"><a href="{% url 'ruseng.views.profile' %}">
+                  <span class="glyphicon glyphicon-user"></span>  {{ user.get_username }} &nbsp; </a>
+                </li>
+                <li>
+                  <a href="{% url 'logout' %}?next=/accounts/login/">Sign out</a>
+                </li>
+              </ul>
+            {% else %}
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="{% url 'login' %}">Sign in</a>
+                </li>
+                <li>
+                  <a href="{% url 'registration_register' %}">Sign up</a>
+                </li>
+              </ul>
+            {% endif %}
+          {% endblock %}
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+{% block content %}
+{% endblock %}
+
+  </div> <!-- wrapper -->
+
+  <div id="page-footer">
+	<div class="container">
+	  <footer>
+		<hr />
+		<p>Phrases Application</p>
+	  </footer>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="{% static "js/bootstrap.min.js" %}"></script>
+  {% block javascript %}{% endblock %}
+</body>
+</html>

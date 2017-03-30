@@ -8,6 +8,7 @@ urlpatterns = [
     url('^$', views.home, name='home'),
     url('^about/$', views.about, name='about'),
     url('^profile/$', views.profile, name='ruseng.views.profile'),
+    url('^get_data/$', views.get_data, name='get-data'),
 
 ]
 
