@@ -8,4 +8,4 @@ class PhrasePairManager(models.Manager):
 class PhrasePair(models.Model):
     phrase_one = models.TextField()
     phrase_two = models.TextField()
-    num = models.IntegerField()
+    num = models.IntegerField(db_index=True)
