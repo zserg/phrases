@@ -2,20 +2,19 @@
 
 {% block title %}Phrases{% endblock %}
 {% block content %}
-<div class="container">
 
-    <div class="row">
-      <div class="col-sm-6 " id="question" style="min-height: 200px"></div>
-      <div class="col-sm-6 " id="answer" style="min-height: 200px"></div>
+    <!-- <div class="row" style="position: absolute; bottom: 0px"> -->
+    <div class="row" id="text-row">
+      <div class="col-sm-6 " id="question" ></div>
+      <div class="col-sm-6 " id="answer" ></div>
     </div>
 
     <div class="row">
-       <div class="col-sm-12 text-center" id="result-row">
+       <div class="col-sm-12 text-center" id="result-row" >
          <button type="button" class="btn btn-primary" id="answer-button">Show</button>
        </div>
     </div>
 
-</div>
 
 {% endblock %}
 

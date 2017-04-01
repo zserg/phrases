@@ -51,19 +51,20 @@
         </div><!--/.navbar-collapse -->
       </div>
     </div>
-{% block content %}
-{% endblock %}
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+        <div class="row" id="page-footer" style="">
+          <footer>
+                <hr />
+                <p>Phrases Application</p>
+          </footer>
+        </div>
+    </div>
 
   </div> <!-- wrapper -->
 
-  <div id="page-footer">
-	<div class="container">
-	  <footer>
-		<hr />
-		<p>Phrases Application</p>
-	  </footer>
-    </div>
-  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="{% static "js/bootstrap.min.js" %}"></script>
   {% block javascript %}{% endblock %}
