@@ -13,7 +13,7 @@ jQuery.fn.invisible = function() {
 
 function get_data (){
     console.log('get_data')
-    $('#answer').invisible();
+//    $('#answer').invisible();
     $.get({url: 'get_data/',
            data: {'count': count},
            success: new_text

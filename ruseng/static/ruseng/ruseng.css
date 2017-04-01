@@ -2,3 +2,19 @@
   min-height:350px;
 }
 
+#answer {
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-top-style: none;
+  border-top-width: 1px;
+}
+
+@media (max-width: 768px) {
+  #answer {
+    border-left-style: none;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-top-width: 1px;
+  }
+}
+
