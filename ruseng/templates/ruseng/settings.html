@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Settings{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <form action="{% url 'settings' %}" method="post">
+           {% csrf_token %}
+           <div class="form-group">
+              <label for="{{ form.phrase_count.id_for_label }}">Phrase count</label>
+              {{ form.phrase_count.errors }}
+              <input type="text" class="form-control"
+                    name="{{ form.phrase_count.html_name }}"
+                    id="{{ form.phrase_count.id_for_label }}"
+                    value="{{ form.phrase_count.value }}">
+           </div>
+
+           <div class="form-group">
+              <label for="{{ form.default_deck.id_for_label }}">Default deck name</label>
+              {{ form.default_deck.errors }}
+              <input class="form-control" rows=3
+                        id="{{ form.default_deck.id_for_label }}"
+                        name="{{ form.default_deck.html_name }}"
+                        value="{{ form.default_deck.value }}">
+           </div>
+           <hr>
+           <div class="form-group">
+              <label for="{{ form.api_url.id_for_label }}">API server URL</label>
+              {{ form.api_url.errors }}
+              <input class="form-control" rows=3
+                      id="{{ form.api_url.id_for_label }}"
+                      name="{{ form.api_url.html_name }}"
+                    value="{{ form.api_url.value }}">
+           </div>
+
+           <div class="form-group">
+              <label for="{{ form.api_token.id_for_label }}">API server token</label>
+              {{ form.api_token.errors }}
+              <input class="form-control" rows=3
+                      id="{{ form.api_token.id_for_label }}"
+                      name="{{ form.api_token.html_name }}"
+                      value="{{ form.api_token.value }}">
+           </div>
+
+
+           <button type="submit" class="btn btn-default">Save </button>
+        </form>
+    </div>
+  </div>
+<div>
+
+
+{% endblock %}
+
+

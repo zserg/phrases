@@ -9,6 +9,7 @@ urlpatterns = [
     url('^about/$', views.about, name='about'),
     url('^profile/$', views.profile, name='ruseng.views.profile'),
     url('^get_data/$', views.get_data, name='get-data'),
+    url('^settings/$', views.settings, name='settings'),
 
 ]
 
